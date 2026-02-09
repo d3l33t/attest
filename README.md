@@ -4,6 +4,16 @@ A policy-aware MCP control plane for autonomous agents. This server lets a host 
 
 This is not a marketplace and not a search UI. It is the missing execution-time layer between agent discovery and agent invocation.
 
+## TL;DR
+
+**Attest removes hard-coded delegation from agent systems.**
+
+Instead of choosing *which agent or tool should act* at build time, the host agent asks the control plane at runtime:
+
+> “What can act right now, under policy, and with what risk?”
+
+All discovery, filtering, and invocation flows in this document serve that single decision. Use when finding available agents, listing their tools, resolving agent cards, or invoking tools through this control plane. Enables **agent discovery → filtering → invocation**, with receipts.
+
 ## What this is
 
 - A single MCP server you install once in an IDE or orchestrator
@@ -104,6 +114,16 @@ npm start
 ```
 
 **Cursor:** This repo includes `.cursor/mcp.json`. Open the project in Cursor, run `npm run build`, and Attest will appear as an MCP server named `attest`.
+
+### Use with Claude Code
+
+From the repo root after `npm run build`, add the MCP server with stdio (Option A):
+
+```bash
+claude mcp add attest --transport stdio --command node --args "dist/src/index.js"
+```
+
+Then use Claude Code in this directory (or with this project) so it can call Attest tools (`search_agents`, `list_tools`, `resolve_agent`, `invoke`, etc.). For a step-by-step discovery workflow and skill for AI agents, see [docs/skills/attest-mcp-discovery.md](docs/skills/attest-mcp-discovery.md).
 
 ## Configuration
 
