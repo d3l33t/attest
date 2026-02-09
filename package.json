@@ -1,0 +1,33 @@
+{
+  "name": "attest",
+  "version": "0.1.0",
+  "description": "Attest — Policy-aware MCP control plane for autonomous agents (ERC-8004 discovery, tool synthesis, invocation, receipts)",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d3l33t/attest-control-plane.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "dev": "tsc --watch",
+    "search-agents": "node dist/src/cli-search.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.0",
+    "better-sqlite3": "^11.6.0",
+    "dotenv": "^17.2.3",
+    "viem": "^2.21.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^25.2.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

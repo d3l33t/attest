@@ -1,0 +1,24 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "Example Agent",
+  "description": "Example EIP-8004 agent for testing. Capabilities: code-review, testing.",
+  "image": "https://example.com/agent.png",
+  "services": [
+    {
+      "name": "mcp",
+      "endpoint": "https://example.com/mcp",
+      "version": "2024-01",
+      "skills": ["code-review", "testing"],
+      "domains": ["software"]
+    }
+  ],
+  "x402Support": false,
+  "active": true,
+  "registrations": [
+    {
+      "agentId": 0,
+      "agentRegistry": "0x8004A818BFB912233c491871b3d84c89A494BD9e"
+    }
+  ],
+  "supportedTrust": ["attestation", "reputation"]
+}
